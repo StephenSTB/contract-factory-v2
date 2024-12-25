@@ -22,6 +22,8 @@ import BasicHook from "../web3-data/contracts/BasicHook.json" assert { "type": "
 import MessagesENS from "../web3-data/contracts/MessagesENS.json" assert { "type": "json" };
 import UUIDConnect from "../web3-data/contracts/UUIDConnect.json" assert { "type": "json" };
 import PublicKeys from "../web3-data/contracts/PublicKeys.json" assert { "type": "json" };
+import Call from "../web3-data/contracts/Call.json" assert { "type": "json" };
+import Name from "../web3-data/contracts/Name.json" assert { "type": "json" };
 export const contractFactoryV2 = (web3) => {
     return {
         "NFT_Register": new web3.eth.Contract(NFT_Register.abi, "", { data: NFT_Register.bytecode }),
@@ -50,6 +52,10 @@ export const contractFactoryV2 = (web3) => {
         "UUIDConnect": new web3.eth.Contract(UUIDConnect.abi, "", { data: UUIDConnect.bytecode }),
         // PublicKeys
         "PublicKeys": new web3.eth.Contract(PublicKeys.abi, "", { data: PublicKeys.bytecode }),
+        // Call
+        "Call": new web3.eth.Contract(Call.abi, "", { data: Call.bytecode }),
+        // Call
+        "Name": new web3.eth.Contract(Name.abi, "", { data: Name.bytecode }),
     };
 };
 /*

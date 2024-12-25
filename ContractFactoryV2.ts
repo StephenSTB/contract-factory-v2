@@ -4,8 +4,6 @@ import { AbiItem } from "web3-utils";
 
 import Web3 from "web3"
 
-//console.log(Contract)
-
 import NFT_Register from "../web3-data/contracts/NFT_Register.json" assert {"type" : "json"}
 
 // Dapp
@@ -51,6 +49,10 @@ import UUIDConnect from "../web3-data/contracts/UUIDConnect.json" assert {"type"
 
 import PublicKeys from "../web3-data/contracts/PublicKeys.json" assert {"type":"json"}
 
+import Call from "../web3-data/contracts/Call.json" assert {"type":"json"}
+
+import Name from "../web3-data/contracts/Name.json" assert {"type":"json"};
+
 export interface ContractFactoryV2{
     [key: string] : any;
 }
@@ -90,17 +92,11 @@ export const contractFactoryV2 = (web3 : Web3) : ContractFactoryV2 => {
 
         // PublicKeys
         "PublicKeys": ( new web3.eth.Contract(PublicKeys.abi as AbiItem[], "", {data: PublicKeys.bytecode}) as unknown) as any,
+        // Call
+        "Call": ( new web3.eth.Contract(Call.abi as AbiItem[], "", {data: Call.bytecode}) as unknown) as any,
+
+        // Call
+        "Name": ( new web3.eth.Contract(Name.abi as AbiItem[], "", {data: Name.bytecode}) as unknown) as any,
 
     } as ContractFactoryV2
 }
-/*
-export const contractFactoryV2 = {
-    "NFT_Register": new Contract(NFT_Register.abi),
-    "UserRegister": new Contract(UserRegister.abi),
-    "Messages": new Contract(Messages.abi),
-    "Feed": new Contract(Feed.abi),
-    "FeedViewer": new Contract(FeedViewer.abi),
-    "CryptoRicks": new Contract(CryptoRicks.abi),
-    "VRFHelper": new Contract(VRFHelper.abi),
-} as ContractFactory
-*/
