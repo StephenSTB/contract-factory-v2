@@ -95,7 +95,7 @@ export const contractFactoryV2 = (web3 : Web3) : ContractFactoryV2 => {
         // Call
         "Call": ( new web3.eth.Contract(Call.abi as AbiItem[], "", {data: Call.bytecode}) as unknown) as any,
 
-        // Call
+        // Name
         "Name": ( new web3.eth.Contract(Name.abi as AbiItem[], "", {data: Name.bytecode}) as unknown) as any,
 
     } as ContractFactoryV2
