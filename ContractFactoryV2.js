@@ -1,4 +1,3 @@
-//console.log(Contract)
 import NFT_Register from "../web3-data/contracts/NFT_Register.json" assert { "type": "json" };
 // Dapp
 import UserRegister from "../web3-data/contracts/UserRegister.json" assert { "type": "json" };
@@ -54,18 +53,7 @@ export const contractFactoryV2 = (web3) => {
         "PublicKeys": new web3.eth.Contract(PublicKeys.abi, "", { data: PublicKeys.bytecode }),
         // Call
         "Call": new web3.eth.Contract(Call.abi, "", { data: Call.bytecode }),
-        // Call
+        // Name
         "Name": new web3.eth.Contract(Name.abi, "", { data: Name.bytecode }),
     };
 };
-/*
-export const contractFactoryV2 = {
-    "NFT_Register": new Contract(NFT_Register.abi),
-    "UserRegister": new Contract(UserRegister.abi),
-    "Messages": new Contract(Messages.abi),
-    "Feed": new Contract(Feed.abi),
-    "FeedViewer": new Contract(FeedViewer.abi),
-    "CryptoRicks": new Contract(CryptoRicks.abi),
-    "VRFHelper": new Contract(VRFHelper.abi),
-} as ContractFactory
-*/ 
